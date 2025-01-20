@@ -7,6 +7,7 @@ const express = require("express"),
   dotenv = require("dotenv");
 
 const User = require("./models/User");
+
 let app = express();
 
 // Load environment variables from the .env file
@@ -110,7 +111,7 @@ function isLoggedIn(req, res, next) {
 }
 
 // Start the server
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000; // Default to 3000 for local development
 app.listen(port, function () {
-  console.log("Server Has Started!");
+  console.log(`Server is running on port ${port}`);
 });
